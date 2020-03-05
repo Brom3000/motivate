@@ -10,5 +10,4 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='A simple script to print random motivational quotes.')
     parser.add_argument('--nocolor', dest='nocolor', default=False, action='store_true', help='Argument to disable colored output. Disabled by default.')
     args = parser.parse_args()
-
     motivate.quote(args.nocolor)
