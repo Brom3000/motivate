@@ -5,13 +5,14 @@ import os
 import random
 import argparse
 
-
-def getlink(file):
+def getDataPath(file):
     if os.path.islink(file):
         path = os.path.dirname(os.readlink(file))
     else:
         path = os.path.dirname(file)
-    return os.path.dirname(path)
+    
+    dataDir = os.path.join(os.path.dirname(path), 'motivate/data')
+    return dataDir
 
 
 def quote(nocolor):
@@ -21,15 +22,7 @@ def quote(nocolor):
     else:
         data_dir = os.path.join(abspath, 'motivate/data')
 
-    try:
-        num_of_json = len([f for f in os.listdir(data_dir)
-                           if os.path.isfile(os.path.join(data_dir, f))])
-    except FileNotFoundError:
-        print("Can't find the data folder. You probably haven't run 'install.sh' yet.")
-        exit(1)
-
-    rand_no = random.randint(1, num_of_json)
-    filename = os.path.join(data_dir, str(rand_no).zfill(3) + '.json')
+    filename = os.path.join(data_dir, 'quotes.json')
     with open(filename) as json_data:
         try:
             quotes = json.load(json_data)
@@ -80,3 +73,7 @@ def quote(nocolor):
             quotes = json.load(f_tmp)
             print(str(quotes["data"][ran_no]))
             print("Hopfully this problem has been solved.")
+
+def main(noquote):
+    dataFile = getDataPath(__file__)
+    print(dataFile)

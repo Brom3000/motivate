@@ -1,1 +1,1 @@
-from .motivate import quote
+from .motivate import *
