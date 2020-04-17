@@ -6,7 +6,8 @@
 
 <br/>
 
-A simple script to print random motivational quotes. Highly influenced by linux command [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix)).
+A simple script to print random motivational quotes.
+This project is forked from https://github.com/mubaris/motivate
 
 ## Features
 * Colored Output
@@ -16,7 +17,8 @@ A simple script to print random motivational quotes. Highly influenced by linux 
 
 ```
 git
-python 3x
+python3
+pip3
 ```
 
 ## Installation
@@ -24,42 +26,19 @@ python 3x
 ### Linux/MacOS
 
 ```
-$ git clone https://github.com/mubaris/motivate.git
-$ cd motivate/motivate
-$ sudo ./install.sh
-$ source ~/.bashrc
-```
-
-zsh users should replace `.bashrc` with `.zshrc`.
-
-If you have no root priviledge, install in this way:
-```
-$ git clone https://github.com/mubaris/motivate.git
+$ git clone https://github.com/Brom3000/motivate.git
 $ cd motivate
-$ ln -s $PWD/motivate/motivate.py moti
-$ ln -s $PWD/dummy.sh mmoti
-
-$ export PATH=$PWD:$PATH
-$ # echo 'export PATH=$PWD:$PATH' >> ~/.bashrc
-
+$ pip3 install . --user
 ```
-Later you can run by calling `moti` (a single run) or `mmoti` (keep running until you break it).
-After doing so, I found that python 2.x is enough to run this script.
+
+After the tool is installed, you can call it with the command 'motivate' from your shell
 
 ### Windows
-
-* Make sure you have Python3 on your path.
-* Clone the repository `git clone https://github.com/mubaris/motivate.git`.
-* Add the path to your local clone to your system path.
-* Run `py -3 motivate.py` from the command prompt.
+Currently only tested on Linux. If you have python3 and pip3 installed, it should probably work the same way.
 
 ## Update Database
 
-```
-$ git clone https://github.com/mubaris/motivate.git
-$ cd motivate
-$ ./UPDATE
-```
+Needs to be documentated
 
 ## Usage
 
@@ -70,7 +49,9 @@ $ motivate
 		--Elon Musk
 ```
 
+<!-- 
 ## Contribution
+<b>The following part is not updated yet.</b>
 The most popular way to contribute is adding [new quotes](https://github.com/mubaris/motivate/issues/3). You do it by adding next JSON file in `motivate/data/` directory. The rule is 20 quotes per file.
 
 Before you submit your new JSON file, it is helpful to validate your file at this [website](https://jsonlint.com/) to make sure it is formatly correct.
@@ -78,3 +59,4 @@ Before you submit your new JSON file, it is helpful to validate your file at thi
 But any improvements are welcome - just open a pull request with some description.
 
 You're also welcome to discuss the idea on [Gitter Chat](https://gitter.im/pymotivate/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge).
+-->
